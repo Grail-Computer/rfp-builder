@@ -1,0 +1,6 @@
+interface:
+  display_name: "RFP Builder by Grail"
+  short_description: "Discover the business, then write a software RFP"
+  default_prompt: "Use $rfp-builder to interview me about the business, operations team, constraints and launch goals, then prepare a vendor-neutral RFP."
+policy:
+  allow_implicit_invocation: true

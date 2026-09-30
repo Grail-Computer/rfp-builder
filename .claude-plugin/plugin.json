@@ -1,0 +1,10 @@
+{
+  "name": "rfp-builder",
+  "version": "0.1.0",
+  "description": "Buyer-side software RFP discovery and document rendering by Grail.",
+  "author": {"name": "Grail Computer", "url": "https://grail.computer"},
+  "homepage": "https://github.com/Grail-Computer/rfp-builder",
+  "repository": "https://github.com/Grail-Computer/rfp-builder",
+  "license": "MIT",
+  "skills": "./skills/"
+}

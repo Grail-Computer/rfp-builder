@@ -1,0 +1,24 @@
+{
+  "name": "@grail/rfp-builder-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx server.ts",
+    "render": "tsx render.tsx",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@formepdf/core": "0.25.0",
+    "@formepdf/react": "0.25.0",
+    "react": "19.2.0",
+    "tsx": "4.20.6",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.2"
+  }
+}

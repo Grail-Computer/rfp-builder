@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rfp-builder",
+  "version": "0.1.0",
+  "description": "Prepare a buyer-side software RFP by discovering business workflows, operating teams, admin controls, AI boundaries and launch acceptance.",
+  "author": {"name": "Grail Computer", "url": "https://grail.computer"},
+  "homepage": "https://github.com/Grail-Computer/rfp-builder",
+  "repository": "https://github.com/Grail-Computer/rfp-builder",
+  "license": "MIT",
+  "keywords": ["RFP", "request for proposal", "procurement", "software requirements", "fractional CTO", "business discovery"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "RFP Builder by Grail",
+        "shortDescription": "Discover your business and prepare a software RFP",
+        "longDescription": "Guided discovery for buyers, founders, operations teams, fractional CTOs and consultants preparing software RFPs. Explore workflows, scale, operator capacity, admin actions, human review, integrations, data boundaries and launch acceptance. Produce a vendor-neutral editable brief and render a PDF in an execution-capable environment. No automatic lead capture or vendor submission.",
+        "developerName": "Grail Computer",
+        "category": "Productivity",
+        "websiteURL": "https://github.com/Grail-Computer/rfp-builder",
+        "brandColor": "#20594F",
+        "defaultPrompt": [
+          "Interview me to create an RFP for a software application my business will operate.",
+          "Review my draft RFP for missing workflows, admin controls and human review capacity.",
+          "Help me brief vendors as a fractional CTO, with testable acceptance and comparable pricing."
+        ]
+      }
+    }
+  }
+}

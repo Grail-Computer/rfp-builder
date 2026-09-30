@@ -1,0 +1,96 @@
+{
+  "title": "Acme Services \u2014 Operations Platform RFP",
+  "organization": "Acme Services (fictional)",
+  "version": "0.1",
+  "date": "2026-09-30",
+  "includeGrail": false,
+  "answers": {
+    "problem": "Fictional example: Acme Services receives requests by email, then copies them into spreadsheets. Cases lose ownership when an operator is away. No real client data is used.",
+    "outcome": "Proposed outcome: every accepted request has a named owner and visible deadline. Establish the current overdue rate during discovery, then agree a target with the operations lead. A numerical improvement has not been promised.",
+    "workflow": "A customer sends a service request. Operations validates it, checks availability and assigns a provider. The provider accepts or declines. Operations resolves unassigned work. Finance reconciles completed work each day.",
+    "scale": "Buyer assumption for this fictional fixture: 400 requests/day now and 1,000/day in year two; peak 150/hour; 20 concurrent operators/customers; one region, English, attachments up to 10 MB. Forecasts require confirmation.",
+    "team": "One full-time operator, weekday coverage, with a supervisor providing absence cover. The operator also handles customer support; only two hours/day are provisionally available for review.",
+    "constraints": "Planning draft. Buyer budget and calendar deadline are open. Responsive browser access is essential. No mobile native app requested. Existing accounting exports must continue.",
+    "roles": "Customers see only their own organization. Operators assign cases in their permitted organization. A supervisor may reassign and approve overrides with a reason. Finance may export completed transactions but cannot change case state. Final role matrix requires buyer confirmation.",
+    "future": "Customers create and track requests in a portal. Required fields are validated. Eligible providers receive offers. Declines and expired offers return to an owned queue. Completion creates a reconciliable finance record.",
+    "exceptions": "Duplicates are flagged without creating a second dispatch. Missing data remains in a correction queue. Provider declines return to assignment. Integration failures show status and allow safe retry. Overdue work alerts the supervisor. Partial completion and disputes require review before finance export.",
+    "admin": "Search/filter by status, owner and deadline; assign/reassign; correct missing data; retry failed integration; cancel with reason; inspect state/audit history; export reconciled work. Bulk cancellation and changes to approved outcomes require supervisor approval. Exact undo/compensation rules remain open.",
+    "automation": "Deterministic validation and routing may run automatically. AI may draft summaries for review; it may not approve payment or change completed outcomes. Reviewers see source evidence and original output. Qualification reference cases and acceptable error costs are open; no accuracy threshold is asserted.",
+    "capacity": "Stress scenario only: 1,000 requests/day \u00d7 20% review \u00d7 4 minutes = 800 minutes/day. Available review capacity is provisionally 120 minutes/day. This gap blocks approval of the future operating model; decide input improvements, authority, review design or staffing after measuring the pilot.",
+    "integrations": "Accounting export is downstream; completed case records are the source of truth. Buyer must provide the file schema and reconciliation owner. Provider notification API access and rate limits are open. Retries must preserve idempotency and expose failures to operations.",
+    "data": "Customer requests and provider details. Buyer must confirm authorized use, allowed locations, retention and deletion. Logs should omit unnecessary personal content. Any external AI processing needs buyer approval and confirmed retention/training terms. This fixture asserts no legal compliance certification.",
+    "launch": "Essential: create request, assign, accept/decline, resolve exception, complete, reconcile export; role checks and audit; trained operator and backup. Later: richer analytics and optional AI summaries. Excluded: native mobile app and direct payment collection.",
+    "acceptance": "Replay the same fictional request through success, duplicate, provider decline, unauthorized access and failed integration. Verify expected state, ownership, customer status and one finance record. Operations signs workflow evidence; finance signs totals. AI is assisted-only until separately qualified.",
+    "uat": "Operations and finance must name testers, hours/week and an acceptance window. These values are open and affect the launch date. Buyer supplies masked samples and answers workflow questions before estimating a committed timeline.",
+    "migration": "Inventory existing open cases and reconciliation totals. Rehearse import and compare source/target counts and amounts. Agree freeze window, cutover authority and rollback conditions with operations and finance. Historical retention scope is open.",
+    "operations": "Provide runbook, deployment documentation, source code and buyer-controlled data export. Demonstrate backup restoration. Buyer must confirm service hours, incident response expectations and post-launch support ownership.",
+    "commercial": "Request separate implementation, hosting, support, migration and optional AI costs. Price the 400/day baseline and 1,000/day forecast; state usage assumptions, third-party charges and buyer dependencies. Currency and budget remain open.",
+    "evaluation": "Proposed discussion weights: workflow fit 30, acceptance evidence 25, ownership/support 20, delivery 15, cost 10. Mandatory role boundaries and launch scenarios are pass/fail. Buyer must confirm gates and weights before issue.",
+    "procurement": "Version 0.1 fictional draft. Issue authority, submission deadline/timezone and contact route remain open. Vendors should follow the same sections and complete the requirement response matrix. Share Q&A and scope amendments consistently."
+  },
+  "requirements": [
+    {
+      "id": "OPS-001",
+      "requirement": "A permitted operator can assign an open case to an eligible provider within the same organization.",
+      "priority": "proposed",
+      "source": "Fictional discovery workflow",
+      "owner": "Operations lead",
+      "acceptance": "Valid assignment succeeds and records owner/state; wrong-organization or unauthorized assignment fails."
+    },
+    {
+      "id": "OPS-002",
+      "requirement": "A failed notification can be retried without producing a duplicate dispatch.",
+      "priority": "proposed",
+      "source": "Fictional failure scenario",
+      "owner": "Operations lead",
+      "acceptance": "Replay a timeout and retry. Exactly one dispatch record exists and failure/recovery history is retained."
+    },
+    {
+      "id": "FIN-001",
+      "requirement": "Finance can export completed work without permission to alter a case outcome.",
+      "priority": "proposed",
+      "source": "Fictional role decision",
+      "owner": "Finance lead",
+      "acceptance": "Export totals reconcile to completed records; attempted state change by finance-only user is denied."
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "Workflow fit",
+      "weight": 30,
+      "evidence": "Same journey and exception demonstration"
+    },
+    {
+      "criterion": "Acceptance evidence",
+      "weight": 25,
+      "evidence": "Distinguishing positive/negative replay"
+    },
+    {
+      "criterion": "Ownership and support",
+      "weight": 20,
+      "evidence": "Handover and restore demonstration"
+    },
+    {
+      "criterion": "Delivery dependencies",
+      "weight": 15,
+      "evidence": "Buyer testing capacity and launch plan"
+    },
+    {
+      "criterion": "Comparable total cost",
+      "weight": 10,
+      "evidence": "Stated volumes and recurring charges"
+    }
+  ],
+  "openDecisions": [
+    {
+      "question": "Resolve 800-minute review demand against 120-minute capacity.",
+      "owner": "Operations lead",
+      "impact": "Operating model cannot be approved."
+    },
+    {
+      "question": "Confirm budget, testing availability and deadline.",
+      "owner": "Buyer sponsor",
+      "impact": "Committed cost and launch date remain open."
+    }
+  ]
+}

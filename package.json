@@ -1,0 +1,12 @@
+{
+  "name": "grail-rfp-builder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "setup": "npm ci --prefix skills/rfp-builder/scripts/runtime",
+    "start": "npm run start --prefix skills/rfp-builder/scripts/runtime",
+    "test": "npm test --prefix skills/rfp-builder/scripts/runtime",
+    "render": "npm run render --prefix skills/rfp-builder/scripts/runtime",
+    "check": "npm run check --prefix skills/rfp-builder/scripts/runtime"
+  }
+}
